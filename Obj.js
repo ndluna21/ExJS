@@ -19,7 +19,7 @@ const per2 = {
     eyeColor: "blue"
 }
 
-Object.assign(per, per2)
+// Object.assign(per, per2)
 // console.log(per);
 
 // keys la ra key cua Object
@@ -79,6 +79,8 @@ Object.assign(per, per2)
 // console.log(ans);
 
 // getPrototypeOf: Lay prototype cua Obj
-const prototype = Object.getPrototypeOf(per)
-console.log(prototype);
+// const prototype = Object.getPrototypeOf(per)
+// console.log(prototype);
 
+const a1 = [1,2,3,[4,5,6,[7,8,9,[10,11,12]]]]
+console.log(a1.flat(4));

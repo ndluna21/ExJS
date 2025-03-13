@@ -6,7 +6,7 @@ const person = {
   name: "Luan",
   age: 24,
   showInfo: function () {
-    console.log("Object:", this.name + " - " + this.age); // this trỏ đến person
+    console.log("Object:", person.name + " - " + person.age); // this trỏ đến person
   },
 };
 person.showInfo();
@@ -30,15 +30,15 @@ const obj = {
 obj.show(); 
 
 // THIS TRONG SETTIMEOUT
-const obj2 = {
-  name: "Luan",
-  show: function () {
-    setTimeout(() => {
-      console.log("setTimeout:", this.name);
-    }, 1000);
-  },
-}; // ArFn k có this nên kế thừa từ show, this trong show trỏ đến obj2
-obj2.show();
+// const obj2 = {
+//   name: "Luan",
+//   show: function () {
+//     setTimeout(() => {
+//       console.log("setTimeout:", this.show);
+//     }, 1000);
+//   },
+// }; // ArFn k có this nên kế thừa từ show, this trong show trỏ đến obj2
+// obj2.show();
 
 // THIS VỚI CALL, APPLY, BIND
 function greet(country, age) {

@@ -11,14 +11,14 @@ console.log(...rest);
 
 // Demo với Object
 const per = {name: "Luan", age: 24, sex: "Nam"};
-// const {name, age, sex} = per
-// console.log(name, age, sex);
+const {name, age, sex} = per
+console.log(name, age, sex);
 // Doi ten bien
-const  {name: fullName} = per
-console.log(fullName);
-// Lay phan con lai
-const {name, ...other} = per;
-console.log(other);
+// const  {name: fullName} = per
+// console.log(fullName);
+// // Lay phan con lai
+// const {name, ...other} = per;
+// console.log(other);
 
 // Demo với Func
 function getVar() {
@@ -30,7 +30,6 @@ function printUser({name, age}) {
     console.log(`${name}, ${age} tuoi`);
 }
 printUser(per)
-
 
 // Demo Spread
 // Sao chép array, Object

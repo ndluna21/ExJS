@@ -1,4 +1,4 @@
-// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 // toString trả về một chuỗi với tất cả giá trị mảng và phân tách nhau bởi dấu phẩy
 // join trả về một chuỗi giống toString nhưng có thể thay đổi dấu phân cách
@@ -32,7 +32,7 @@
 
 // flat: Làm phẳng các mảng lồng nhau tạo thành mảng mới, mặc định là 0, Infinity để phẳng toàn bộ
 // const myArr = [1, 2, [3, [4, [5, 6]], 7], 8];
-// const newArr = myArr.flat(2);
+// const newArr = myArr.flat(Infinity);
 // console.log(newArr);
 
 // forEach: Lặp qua từg phần tử trong mảng mà không cần trả về giá trị
@@ -53,7 +53,7 @@
 // console.log(long);
 
 // reduce: Duyệt qua mảng và thao tác với mảng, không tạo mảng mới, trả về một giá trị duy nhất
-// const res = fruits.reduce((pre, next) => pre + ", " + next,)
+// const res = fruits.reduce((pre, next) => pre + ", " + next, "luna")
 // console.log(res);
 
 // some: Kiểm tra xem có ít nhất 1 ptu thoả mãn điều kiện không, trả về true nếu có ít nhất 1 ptu đúng và dừng ngay
@@ -84,6 +84,7 @@
 
 // Prototype
 Array.prototype.quicksort = function () { 
+    console.log("Current: ", this);
     if(this.length <= 1) return this;
     let tmp = this[this.length - 1];
     let left = [], right = [];
@@ -95,5 +96,3 @@ Array.prototype.quicksort = function () {
 }
 const arr2 = [8, 2, 5, 9, 1, 4, 7];
 console.log(arr2.quicksort());
-
-
