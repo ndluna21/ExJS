@@ -21,8 +21,8 @@
 // //     })
 
 // // Promise.race() trả về pr hoàn thành đầu tiên, kết quả phụ thuộc vào pr đầu tiên hoàn thành
+// const p2 = new Promise((resolve, reject) => setTimeout(() => reject("P2 race"), 2000));
 // const p1 = new Promise((resolve, reject) => setTimeout(() => resolve("P1 race"), 2000));
-// const p2 = new Promise((resolve, reject) => setTimeout(() => reject("P2 race"), 1000));
 // const p3 = new Promise((resolve, reject) => setTimeout(() => resolve("P3 race"), 3000));
 // const p4 = new Promise((resolve, reject) => setTimeout(() => reject("P4 race"), 4000));
 
@@ -50,16 +50,16 @@
 // const a = Promise
 //   .allSettled([pro1, pro2, pro3, pro4])
 //   .then((result) => console.log("Res allSetted: ", result));
-// console.log(typeof a);
+
 
 // Promise.all() reject khi có ít nhất 1 pro reject, resolve khi tất cả pr resolve
 const prom1 = new Promise((resolve, reject) => setTimeout(() => resolve("P1 all"), 1000));
 const prom2 = new Promise((resolve, reject) =>
-  setTimeout(() => resolve("P2 all"), 2000)
+  setTimeout(() => reject("P2 all"), 2000)
 );
 const prom3 = new Promise((resolve, reject) => setTimeout(() => resolve("P3 all"), 3000));
 const prom4 = new Promise((resolve, reject) =>
-  setTimeout(() => resolve("P4 all"), 4000)
+  setTimeout(() => reject("P4 all"), 4000)
 );
 
 Promise.all([prom1, prom2, prom3, prom4])

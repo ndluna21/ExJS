@@ -14,7 +14,7 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 // const children = arr1.concat(arr2, arr3);
 // console.log(children);
 
-// splice: Thêm từ vị trí x , xoá y phần tử
+// splice: Thêm từ vị trí x , xoá y phần tử, nếu start < 0, đi từ cuối mảng, del < 0 mặc định là 0
 // fruits.splice(1, 0, "Lemon", "Kiwi") //Thêm từ vt số 1, xoá 0 ptu
 // console.log(fruits);
 
@@ -84,15 +84,35 @@ const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
 // Prototype
 Array.prototype.quicksort = function () { 
-    console.log("Current: ", this);
-    if(this.length <= 1) return this;
-    let tmp = this[this.length - 1];
+    // console.log("Current: ", this);
     let left = [], right = [];
-    for(let i = 0; i < this.length - 1; i++){
-        if(this[i] < tmp) left.push(this[i]);
-        else right.push(this[i])
+    if(this.length <= 1) return this;
+    for (let i = 0; i < this.length; i++) {
+        if (typeof this[i] !== "number") {
+            right.push(this[i])
+        } else left.push(this[i])
     }
-    return [...left.quicksort(), tmp, ...right.quicksort()];
+    // console.log(tmp);
+    // console.log(right);
+    // let tmp = left[left.length - 1];
+    // for(let i = 0; i < left.length - 1; i++){
+    //     if(left[i] == tmp) continue;
+    //     if(typeof this[i] == "number"){
+    //         if(this[i] < tmp) left.push(this[i]);
+    //         else right.push(this[i])
+    //     } 
+    // }
+
+    return left;
 }
-const arr2 = [8, 2, 5, 9, 1, 4, 7];
-console.log(arr2.quicksort());
+const arr2 = ['Thai',8, 2, , 9, undefined, 1, 4, null, 7, "Luna", 77, 20, 16];
+const arr3 = arr2.quicksort()
+console.log(arr3.sort((a,b) => a-b));
+const arr4 = [3,  {
+    a: "afssabf",
+    e: {
+        f: "hddks"
+    }
+}]
+arr4[1].e = {a: "hehe"}
+console.log(arr4);

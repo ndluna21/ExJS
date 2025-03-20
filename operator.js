@@ -27,9 +27,9 @@ let a = 10, b = 3;
 // console.log(!x);
 
 // Toán tử điều kiện
-// let age = 20;
-// let st = age > 18 ? "Người lớn" : "Trẻ em";
-// console.log(st);
+let age = 20;
+let st = age > (18 != 10) ? "Người lớn" : "Trẻ em";
+console.log(1 && false && {} && []);
 
 // // Toán tử nullish: Kiểm tra null, undefined
 // let user = null;

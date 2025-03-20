@@ -82,5 +82,15 @@ const per2 = {
 // const prototype = Object.getPrototypeOf(per)
 // console.log(prototype);
 
-const a1 = [1,2,3,[4,5,6,[7,8,9,[10,11,12]]]]
-console.log(a1.flat(4));
+// const a1 = [1,2,3,[4,5,6,[7,8,9,[10,11,12]]]]
+// console.log(a1.flat(4));
+
+
+let object1 = { foo: "bar", a: 5 };
+let object2 = {name: "foo", d: 10 };
+let object3 = {name: "Luan", age: 24, address: {tinh: "Bac Ninh", huyen: "Yen Phong"}}
+const obja = JSON.parse(JSON.stringify(object3))
+obja.address.tinh = "Hai Phong"
+// const res = Object.assign(object2, object1)
+console.log(obja)
+console.log(object3)
